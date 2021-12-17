@@ -110,7 +110,7 @@ function init() {
             type: 'list',
             name: 'license',
             message: questions[6],
-            choices: ['MIT', 'Apache', 'GPL', 'None'],
+            choices: ['MIT', 'Apache 2.0 ', 'GPL v3.0', 'None'],
             // validate: licenseInput = () => {
             //     if (licenseInput) {
             //         return true;

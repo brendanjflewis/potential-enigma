@@ -3,11 +3,11 @@
 function renderLicenseBadge(license) {
   let badge = '';
   if (license === 'MIT') {
-    badge = ''
+    badge = '![License](https://img.shields.io/badge/license-MIT-blue)'
   } else if (license === 'Apache 2.0') {
-    badge = ''
+    badge = '![License](https://img.shields.io/badge/license-Apache%202.0-yellow)'
   } else if (license === 'GPL v3.0') {
-    badge = ''
+    badge = '![License](https://img.shields.io/badge/license-GPL%20v3-red)'
   } else {
     badge = ''
   }
@@ -19,7 +19,7 @@ function renderLicenseBadge(license) {
 function renderLicenseLink(license) {
   let licenseLink = '';
   if (license === 'MIT') {
-    licenseLink = ''
+    licenseLink = 'https://choosealicense.com/licenses/mit/'
   } else if (license === 'Apache 2.0') {
     licenseLink = 'https://www.apache.org/licenses/LICENSE-2.0'
   } else if (license === 'GPL v3.0') {
@@ -47,8 +47,9 @@ function renderLicenseSection(license) {
 function generateMarkdown(data) {
   return `# ${data.title}
 
-## ${renderLicenseSection(answer.license)} ${renderLicenseBadge(answer.license)}
-### ${renderLicenseLink(answer.license)}
+## ${renderLicenseSection(data.license)} ${renderLicenseBadge(data.license)}
+
+### ${renderLicenseLink(data.license)}
 
 ## Description
 ${data.description}

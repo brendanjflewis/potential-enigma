@@ -1,9 +1,5 @@
 # i
 
-## License: MIT ![License](https://img.shields.io/badge/license-MIT-blue)
-
-### https://choosealicense.com/licenses/mit/
-
 ## Description
 i
 
@@ -21,18 +17,23 @@ undefined
 
 <a name="usage"></a>
 ## Usage
-i
+a
+
+<a name="license"></a>
+## License: MIT ![License](https://img.shields.io/badge/license-MIT-blue)
+
+* https://choosealicense.com/licenses/mit/
 
 <a name="contribute"></a>
 ## Contributing
-i
+a
 
 <a name="test"></a>
 ## Tests
-i
+a
 
 <a name="questions"></a>
 ## Questions
-* Email me at <a href= "mailto: i">i</a>
-* Check out my Github profile at <a href= "https://www.github.com/ii">ii</a>
+* Email me at <a href= "mailto: a">a</a>
+* Check out my Github profile at <a href= "https://www.github.com/a">a</a>
 

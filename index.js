@@ -2,7 +2,7 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 const generateMarkdown = require('./utils/generateMarkdown');
-const { join } = require('path/posix');
+
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -18,10 +18,144 @@ const questions = [
 ];
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) {
+    fs.writeFile(fileName, data, (err) => {
+        if (err) throw (err);
+        console.log('Your professional README file has been successfully created!');
+    })
+};
 
 // TODO: Create a function to initialize app
-function init() {}
+function init() {
+    return inquirer.prompt([
+        {
+            type: 'input',
+            name: 'title',
+            message: questions[0],
+            validate: nameInput => {
+                if (nameInput) {
+                    return true;
+                } else {
+                    console.log('You need to enter a title for your project!');
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'description',
+            message: questions[1],
+            validate: descriptionInput => {
+                if (descriptionInput) {
+                    return true;
+                } else {
+                    console.log('A description of your project is required.');
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'instructions',
+            message: questions[2],
+            validate: instructionsInput => {
+                if (instructionsInput) {
+                    return true;
+                } else {
+                    console.log('Please provide instructions for installation.');
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'usage',
+            message: questions[3],
+            validate: usageInput => {
+                if (usageInput) {
+                    return true;
+                } else {
+                    console.log('Please provide any usage information.');
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'contribute',
+            message: questions[4],
+            validate: contributeInput => {
+                if (contributeInput) {
+                    return true;
+                } else {
+                    console.log('Please provide contribution guidelines.');
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'testing',
+            message: questions[5],
+            validate: testingInput => {
+                if (testingInput) {
+                    return true;
+                } else {
+                    console.log('Please provide instructions for testing this project.');
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'list',
+            name: 'license',
+            message: questions[6],
+            choices: ['MIT', 'Apache', 'GPL', 'None'],
+            // validate: licenseInput = () => {
+            //     if (licenseInput) {
+            //         return true;
+            //     } else {
+            //         console.log('Please select an option from the list')
+            //         return false;
+            //     }
+            // }
+        },
+        {
+            type: 'input',
+            name: 'github',
+            message: questions[7],
+            validate: githubInput => {
+                if (githubInput) {
+                    return true;
+                } else {
+                    console.log('Please provide your Github username.');
+                    return false;
+                }
+            }
+
+        },
+        {
+            type: 'input',
+            name: 'email',
+            message: questions[8],
+            validate: emailInput => {
+                if (emailInput) {
+                    return true;
+                } else {
+                    console.log('Please provide your email address.');
+                    return false;
+                }
+            }
+        }])
+        .then((answers) => {
+            console.log(answers);
+            return generateMarkdown(answers);
+        })
+        .then((markdown) => {
+            return writeToFile('READ.md', markdown);
+        })
+
+};
 
 // Function call to initialize app
 init();

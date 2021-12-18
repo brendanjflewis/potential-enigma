@@ -144,7 +144,7 @@ function init() {
             return generateMarkdown(answers);
         })
         .then((markdown) => {
-            return writeToFile('READ.md', markdown);
+            return writeToFile('README.md', markdown);
         })
 
 };

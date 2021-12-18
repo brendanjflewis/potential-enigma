@@ -55,10 +55,10 @@ ${data.description}
 * [Usage](#usage)
 * [License](#license)
 * [Contributing](#contributing)
-* [Tests](#Tests)
-* [Questions](#Questions)
+* [Tests](#tests)
+* [Questions](#questions)
 
-<a name="install"></a>
+<a name="installation"></a>
 ## Installation
 ${data.installation}
 
@@ -67,6 +67,7 @@ ${data.installation}
 ${data.usage}
 
 <a name="license"></a>
+## License
 ## ${renderLicenseSection(data.license)} ${renderLicenseBadge(data.license)}
 
 * ${renderLicenseLink(data.license)}

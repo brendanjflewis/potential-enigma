@@ -56,10 +56,10 @@ function init() {
         },
         {
             type: 'input',
-            name: 'instructions',
+            name: 'installation',
             message: questions[2],
-            validate: instructionsInput => {
-                if (instructionsInput) {
+            validate: installationInput => {
+                if (installationInput) {
                     return true;
                 } else {
                     console.log('Please provide instructions for installation.');
@@ -110,15 +110,7 @@ function init() {
             type: 'list',
             name: 'license',
             message: questions[6],
-            choices: ['MIT', 'Apache 2.0 ', 'GPL v3.0', 'None'],
-            // validate: licenseInput = () => {
-            //     if (licenseInput) {
-            //         return true;
-            //     } else {
-            //         console.log('Please select an option from the list')
-            //         return false;
-            //     }
-            // }
+            choices: ['MIT', 'Apache 2.0 ', 'GPL v3.0', 'None']
         },
         {
             type: 'input',
